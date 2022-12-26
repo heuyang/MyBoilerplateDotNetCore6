@@ -1,19 +1,19 @@
-﻿using MyBoilerplateDotNetCore6.Entities.RepositoryActionResult;
+﻿using MyBoilerplateDotNetCore6.Entities;
+using MyBoilerplateDotNetCore6.Entities.RepositoryActionResult;
 
 namespace MyBoilerplateDotNetCore6.Data.Repository
 {
-    public interface IGenericRepository<T, TConditions>
-        where T : class
-        where TConditions : class
+    public interface IGenericRepository<TEntity, TConditions>
+        where TEntity : BaseEntity
+        where TConditions : BaseSearchConditions
     {
 
-        T GetById(Guid id);
-        GetSingleResult<T> GetById(int Id);
-        GetPagedResult<T, TConditions> GetPage(TConditions conditions, int pageSize, int pageIndex);
-        GetAllResult<T> GetAll(string keywords);
-        CreateResult Create(T entity);
-        UpdateResult Update(T entity);
-        DeleteResult Delete(T entity);
+        GetSingleResult<TEntity> GetById(int Id);
+        GetPagedResult<TEntity, TConditions> GetPage(TConditions conditions, int pageSize, int pageIndex);
+        GetAllResult<TEntity> GetAll(string keywords);
+        CreateResult Create(TEntity entity);
+        UpdateResult Update(TEntity entity);
+        DeleteResult Delete(TEntity entity);
 
 
     }
