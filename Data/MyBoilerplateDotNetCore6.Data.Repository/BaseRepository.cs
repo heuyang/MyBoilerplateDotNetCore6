@@ -51,7 +51,7 @@ namespace MyBoilerplateDotNetCore6.Data.Repository
             return result;
         }
 
-        public GetAllResult<TEntity> GetAll(string keywords)
+        public virtual GetAllResult<TEntity> GetAll(string keywords)
         {
             throw new NotImplementedException("To be implemented or disabled");
         }
@@ -75,7 +75,7 @@ namespace MyBoilerplateDotNetCore6.Data.Repository
             return result;
         }
 
-        public GetPagedResult<TEntity, TConditions> GetPage(TConditions conditions, int pageSize, int pageIndex)
+        public virtual GetPagedResult<TEntity, TConditions> GetPage(TConditions conditions, int pageSize, int pageIndex)
         {
             throw new NotImplementedException("To be implemented or disabled");
         }
