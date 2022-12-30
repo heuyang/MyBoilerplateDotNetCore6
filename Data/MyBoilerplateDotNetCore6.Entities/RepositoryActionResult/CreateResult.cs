@@ -1,12 +1,14 @@
 ﻿namespace MyBoilerplateDotNetCore6.Entities.RepositoryActionResult
 {
-    public class CreateResult : BaseResult
+    public class CreateResult<TEntity> : BaseResult
+        where TEntity : BaseEntity
     {
+        public TEntity Entity { get; set; }
 
-        public void SetToSucceeded(int newEntityId)
+        public void SetToSucceeded(TEntity newEntity)
         {
+            Entity = newEntity;
             SetToSucceeded();
-            EntityId = newEntityId;
         }
 
     }

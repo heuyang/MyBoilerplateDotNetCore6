@@ -15,7 +15,7 @@ namespace MyBoilerplateDotNetCore6.Data.Repository.Product
 
         }
 
-        public override GetAllResult<ProductEntity> GetAll(string keywords)
+        public override GetAllResult<ProductEntity> GetAll()
         {
             throw new NotImplementedException();
         }

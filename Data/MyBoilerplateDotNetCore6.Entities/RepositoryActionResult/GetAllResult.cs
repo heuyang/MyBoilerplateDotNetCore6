@@ -1,9 +1,15 @@
 ﻿namespace MyBoilerplateDotNetCore6.Entities.RepositoryActionResult
 {
-    public class GetAllResult<T> : BaseResult where T : class
+    public class GetAllResult<TEntity> : BaseResult where TEntity : BaseEntity
     {
 
-        public IEnumerable<T> Results { get; set; }
+        public IEnumerable<TEntity> Entities { get; set; }
+
+        public void SetToSucceeded(IEnumerable<TEntity> allEntities)
+        {
+            Entities = allEntities;
+            SetToSucceeded();
+        }
 
     }
 }

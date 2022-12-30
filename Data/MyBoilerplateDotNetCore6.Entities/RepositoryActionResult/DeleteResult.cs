@@ -2,10 +2,12 @@
 {
     public class DeleteResult : BaseResult
     {
+        public int EntityId { get; set; }
+
         public void SetToSucceeded(int deletedEntityId)
         {
-            SetToSucceeded();
             EntityId = deletedEntityId;
+            SetToSucceeded();
         }
 
     }

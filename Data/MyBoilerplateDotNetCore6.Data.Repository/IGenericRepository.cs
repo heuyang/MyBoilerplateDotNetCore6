@@ -10,9 +10,9 @@ namespace MyBoilerplateDotNetCore6.Data.Repository
 
         GetSingleResult<TEntity> GetById(int Id);
         GetPagedResult<TEntity, TConditions> GetPage(TConditions conditions, int pageSize, int pageIndex);
-        GetAllResult<TEntity> GetAll(string keywords);
-        CreateResult Create(TEntity entity);
-        UpdateResult Update(TEntity entity);
+        GetAllResult<TEntity> GetAll();
+        CreateResult<TEntity> Create(TEntity entity);
+        UpdateResult<TEntity> Update(TEntity entity);
         DeleteResult Delete(TEntity entity);
 
 

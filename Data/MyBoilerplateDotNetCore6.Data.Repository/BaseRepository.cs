@@ -17,9 +17,9 @@ namespace MyBoilerplateDotNetCore6.Data.Repository
             _context = dbContext;
         }
 
-        public CreateResult Create(TEntity entity)
+        public CreateResult<TEntity> Create(TEntity entity)
         {
-            var result = new CreateResult();
+            var result = new CreateResult<TEntity>();
             try
             {
                 _context.Set<TEntity>().Add(entity);
@@ -30,7 +30,7 @@ namespace MyBoilerplateDotNetCore6.Data.Repository
                 result.SetError(ex.Message);
             }
 
-            result.SetToSucceeded(entity.Id);
+            result.SetToSucceeded(entity);
             return result;
         }
 
@@ -51,7 +51,7 @@ namespace MyBoilerplateDotNetCore6.Data.Repository
             return result;
         }
 
-        public virtual GetAllResult<TEntity> GetAll(string keywords)
+        public virtual GetAllResult<TEntity> GetAll()
         {
             throw new NotImplementedException("To be implemented or disabled");
         }
@@ -62,10 +62,10 @@ namespace MyBoilerplateDotNetCore6.Data.Repository
 
             try
             {
-                result.Entity = _context.Set<TEntity>()
+                var entities = _context.Set<TEntity>()
                     .AsNoTracking()
                     .First(x => x.Id == id);
-                result.EntityId = id;
+                result.SetToSucceeded(entities);
             }
             catch (Exception ex)
             {
@@ -80,22 +80,23 @@ namespace MyBoilerplateDotNetCore6.Data.Repository
             throw new NotImplementedException("To be implemented or disabled");
         }
 
-        public UpdateResult Update(TEntity entity)
+        public UpdateResult<TEntity> Update(TEntity entity)
         {
-            var result = new UpdateResult();
+            var result = new UpdateResult<TEntity>();
 
             try
             {
                 _context.Set<TEntity>().Update(entity);
                 _context.Entry(entity).State = EntityState.Modified;
                 _context.SaveChanges();
+
+                result.SetToSucceeded(entity);
             }
             catch (Exception ex)
             {
                 result.SetError(ex.Message);
             }
 
-            result.SetToSucceeded();
             return result;
         }
     }

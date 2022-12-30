@@ -1,8 +1,7 @@
-﻿namespace MyBoilerplateDotNetCore6.Entities.RepositoryActionResult
+﻿namespace MyBoilerplateDotNetCore6.ViewModel.BusinessActionResult
 {
-    public class BaseResult
+    public class BaseSimpleResult
     {
-
         public bool Success { get; private set; } = false;
         public string Message { get; private set; } = string.Empty;
 
@@ -23,8 +22,6 @@
             Success = false;
             Message = message;
         }
-
-
 
     }
 }

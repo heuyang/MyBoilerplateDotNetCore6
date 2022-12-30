@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using MyBoilerplateDotNetCore6.Entities.Product;
 using MyBoilerplateDotNetCore6.Entities.RepositoryActionResult;
 using MyBoilerplateDotNetCore6.Entities.User;
 
@@ -15,7 +14,7 @@ namespace MyBoilerplateDotNetCore6.Data.Repository.User
 
         }
 
-        public override GetAllResult<UserEntity> GetAll(string keywords)
+        public override GetAllResult<UserEntity> GetAll()
         {
             throw new NotImplementedException();
         }
