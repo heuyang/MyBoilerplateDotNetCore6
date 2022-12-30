@@ -19,9 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBoilerplateDotNetCore6.Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBoilerplateDotNetCore6.Data.Sqlite", "Data\MyBoilerplateDotNetCore6.Data.Sqlite\MyBoilerplateDotNetCore6.Data.Sqlite.csproj", "{5841F1AB-3C00-4E32-8FFC-339DE7325CC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBoilerplateDotNetCore6.Entities", "Data\MyBoilerplateDotNetCore6.Entities\MyBoilerplateDotNetCore6.Entities.csproj", "{C32932C2-7BE0-4031-A618-18F64D82DDD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBoilerplateDotNetCore6.Entities", "Data\MyBoilerplateDotNetCore6.Entities\MyBoilerplateDotNetCore6.Entities.csproj", "{C32932C2-7BE0-4031-A618-18F64D82DDD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBoilerplateDotNetCore6.Data.Repository", "Data\MyBoilerplateDotNetCore6.Data.Repository\MyBoilerplateDotNetCore6.Data.Repository.csproj", "{44B3AC51-F88F-4F4E-BF0D-3622BF79385B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBoilerplateDotNetCore6.Data.Repository", "Data\MyBoilerplateDotNetCore6.Data.Repository\MyBoilerplateDotNetCore6.Data.Repository.csproj", "{44B3AC51-F88F-4F4E-BF0D-3622BF79385B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBoilerplateDotNetCore6.Business", "Business\MyBoilerplateDotNetCore6.Business\MyBoilerplateDotNetCore6.Business.csproj", "{4BEF98EF-5079-4AB7-82EA-C24D28E7CF2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBoilerplateDotNetCore6.ViewModel", "Business\MyBoilerplateDotNetCore6.ViewModel\MyBoilerplateDotNetCore6.ViewModel.csproj", "{8A13A5AD-035C-44EF-A788-FFFC6E637F9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{44B3AC51-F88F-4F4E-BF0D-3622BF79385B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44B3AC51-F88F-4F4E-BF0D-3622BF79385B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44B3AC51-F88F-4F4E-BF0D-3622BF79385B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BEF98EF-5079-4AB7-82EA-C24D28E7CF2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BEF98EF-5079-4AB7-82EA-C24D28E7CF2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BEF98EF-5079-4AB7-82EA-C24D28E7CF2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BEF98EF-5079-4AB7-82EA-C24D28E7CF2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A13A5AD-035C-44EF-A788-FFFC6E637F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A13A5AD-035C-44EF-A788-FFFC6E637F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A13A5AD-035C-44EF-A788-FFFC6E637F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A13A5AD-035C-44EF-A788-FFFC6E637F9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +66,8 @@ Global
 		{5841F1AB-3C00-4E32-8FFC-339DE7325CC1} = {4F2E5D1B-613C-4267-A855-F49AC7D5CCC0}
 		{C32932C2-7BE0-4031-A618-18F64D82DDD2} = {4F2E5D1B-613C-4267-A855-F49AC7D5CCC0}
 		{44B3AC51-F88F-4F4E-BF0D-3622BF79385B} = {4F2E5D1B-613C-4267-A855-F49AC7D5CCC0}
+		{4BEF98EF-5079-4AB7-82EA-C24D28E7CF2D} = {A2AE1650-55B9-4B2D-A166-43B45D72E597}
+		{8A13A5AD-035C-44EF-A788-FFFC6E637F9A} = {A2AE1650-55B9-4B2D-A166-43B45D72E597}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D609BE75-279F-4A3F-AD3F-CC8E6385A29F}

@@ -5,7 +5,7 @@ namespace MyBoilerplateDotNetCore6.Data.Repository
 {
     public interface IGenericRepository<TEntity, TConditions>
         where TEntity : BaseEntity
-        where TConditions : BaseSearchConditions
+        where TConditions : BaseEntitySearchConditions
     {
 
         GetSingleResult<TEntity> GetById(int Id);

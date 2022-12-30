@@ -8,7 +8,7 @@ namespace MyBoilerplateDotNetCore6.Data.Repository
 {
     public class BaseRepository<TEntity, TConditions> : IGenericRepository<TEntity, TConditions>
         where TEntity : BaseEntity
-        where TConditions : BaseSearchConditions
+        where TConditions : BaseEntitySearchConditions
     {
         protected readonly DbContext _context;
 

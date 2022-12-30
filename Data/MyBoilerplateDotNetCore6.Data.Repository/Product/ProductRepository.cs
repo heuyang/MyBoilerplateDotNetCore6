@@ -6,7 +6,7 @@ using MyBoilerplateDotNetCore6.Entities.RepositoryActionResult;
 
 namespace MyBoilerplateDotNetCore6.Data.Repository.Product
 {
-    public class ProductRepository : BaseRepository<ProductEntity, ProductSearchConditions>
+    public class ProductRepository : BaseRepository<ProductEntity, ProductEntitySearchConditions>
     {
 
         public ProductRepository(DbContext dbContext, ILogger logger)
@@ -20,7 +20,7 @@ namespace MyBoilerplateDotNetCore6.Data.Repository.Product
             throw new NotImplementedException();
         }
 
-        public override GetPagedResult<ProductEntity, ProductSearchConditions> GetPage(ProductSearchConditions conditions, int pageSize, int pageIndex)
+        public override GetPagedResult<ProductEntity, ProductEntitySearchConditions> GetPage(ProductEntitySearchConditions conditions, int pageSize, int pageIndex)
         {
             throw new NotImplementedException();
         }

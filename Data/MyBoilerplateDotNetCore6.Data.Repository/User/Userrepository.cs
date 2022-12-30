@@ -6,7 +6,7 @@ using MyBoilerplateDotNetCore6.Entities.User;
 
 namespace MyBoilerplateDotNetCore6.Data.Repository.User
 {
-    public class UserRepository : BaseRepository<UserEntity, UserSearchConditions>
+    public class UserRepository : BaseRepository<UserEntity, UserEntitySearchConditions>
     {
 
         public UserRepository(DbContext dbContext, ILogger logger)
@@ -20,7 +20,7 @@ namespace MyBoilerplateDotNetCore6.Data.Repository.User
             throw new NotImplementedException();
         }
 
-        public override GetPagedResult<UserEntity, UserSearchConditions> GetPage(UserSearchConditions conditions, int pageSize, int pageIndex)
+        public override GetPagedResult<UserEntity, UserEntitySearchConditions> GetPage(UserEntitySearchConditions conditions, int pageSize, int pageIndex)
         {
             throw new NotImplementedException();
         }

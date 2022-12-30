@@ -3,7 +3,7 @@
     public interface ISearchConditions
     {
 
-        List<int> SpecificIds { get; set; }
+        List<int>? SpecificIds { get; set; }
 
     }
 }
