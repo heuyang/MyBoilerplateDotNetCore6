@@ -6,29 +6,31 @@ namespace MyBoilerplateDotNetCore6.Business.Product
 {
     public class ProductBusiness : IProductBusiness
     {
-        public BaseSimpleResult CreateProduct(CreateProductViewModel newProductViewModel)
+
+        public SimpleResult CreateProduct(CreateProductViewModel newProductViewModel)
         {
             throw new NotImplementedException();
         }
 
-        public BaseSimpleResult DeleteProduct(int id)
+        public SimpleResult DeleteProduct(int id)
         {
             throw new NotImplementedException();
         }
 
-        public BaseResult<ProductDetailsViewModel> GetProduct(int id)
+        public Result<ProductDetailsViewModel> GetProduct(int id)
         {
             throw new NotImplementedException();
         }
 
-        public BaseResult<ViewModelPage<ProductListViewModel>> GetProductListPage(ProductSearchConditionsViewModel conditions, int pageIndex, int pageSize = 20)
+        public Result<ViewModelPage<ProductListViewModel>> GetProductListPage(ProductSearchConditionsViewModel conditions, int pageIndex, int pageSize = 20)
         {
             throw new NotImplementedException();
         }
 
-        public BaseSimpleResult UpdateProduct(UpdateProductViewModel newProductViewModel)
+        public SimpleResult UpdateProduct(UpdateProductViewModel newProductViewModel)
         {
             throw new NotImplementedException();
         }
+
     }
 }

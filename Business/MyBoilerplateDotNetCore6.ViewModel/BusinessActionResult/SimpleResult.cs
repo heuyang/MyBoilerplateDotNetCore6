@@ -1,6 +1,6 @@
 ﻿namespace MyBoilerplateDotNetCore6.ViewModel.BusinessActionResult
 {
-    public class BaseSimpleResult
+    public class SimpleResult
     {
         public bool Success { get; private set; } = false;
         public string Message { get; private set; } = string.Empty;

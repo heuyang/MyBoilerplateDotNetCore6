@@ -7,11 +7,11 @@ namespace MyBoilerplateDotNetCore6.Business.Product
     public interface IProductBusiness
     {
 
-        BaseResult<ProductDetailsViewModel> GetProduct(int id);
-        BaseResult<ViewModelPage<ProductListViewModel>> GetProductListPage(ProductSearchConditionsViewModel conditions, int pageIndex, int pageSize = 20);
-        BaseSimpleResult CreateProduct(CreateProductViewModel newProductViewModel);
-        BaseSimpleResult UpdateProduct(UpdateProductViewModel newProductViewModel);
-        BaseSimpleResult DeleteProduct(int id);
+        Result<ProductDetailsViewModel> GetProduct(int id);
+        Result<ViewModelPage<ProductListViewModel>> GetProductListPage(ProductSearchConditionsViewModel conditions, int pageIndex, int pageSize = 20);
+        SimpleResult CreateProduct(CreateProductViewModel newProductViewModel);
+        SimpleResult UpdateProduct(UpdateProductViewModel newProductViewModel);
+        SimpleResult DeleteProduct(int id);
 
     }
 }

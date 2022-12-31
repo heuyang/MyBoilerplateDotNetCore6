@@ -7,11 +7,11 @@ namespace MyBoilerplateDotNetCore6.Business.User
 {
     public interface IUserBusiness
     {
-        BaseResult<UserDetailsViewModel> GetProduct(int id);
-        BaseResult<ViewModelPage<UserListViewModel>> GetProductListPage(UserSearchConditionsViewModel conditions, int pageIndex, int pageSize = 20);
-        BaseSimpleResult CreateProduct(CreateUserViewModel newProductViewModel);
-        BaseSimpleResult UpdateProduct(UpdateUserViewModel newProductViewModel);
-        BaseSimpleResult DeleteProduct(int id);
+        Result<UserDetailsViewModel> GetProduct(int id);
+        Result<ViewModelPage<UserListViewModel>> GetProductListPage(UserSearchConditionsViewModel conditions, int pageIndex, int pageSize = 20);
+        SimpleResult CreateProduct(CreateUserViewModel newProductViewModel);
+        SimpleResult UpdateProduct(UpdateUserViewModel newProductViewModel);
+        SimpleResult DeleteProduct(int id);
     }
 
 }

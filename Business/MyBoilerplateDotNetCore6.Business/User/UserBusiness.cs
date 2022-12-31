@@ -6,27 +6,27 @@ namespace MyBoilerplateDotNetCore6.Business.User
 {
     public class UserBusiness : IUserBusiness
     {
-        public BaseSimpleResult CreateProduct(CreateUserViewModel newProductViewModel)
+        public SimpleResult CreateProduct(CreateUserViewModel newProductViewModel)
         {
             throw new NotImplementedException();
         }
 
-        public BaseSimpleResult DeleteProduct(int id)
+        public SimpleResult DeleteProduct(int id)
         {
             throw new NotImplementedException();
         }
 
-        public BaseResult<UserDetailsViewModel> GetProduct(int id)
+        public Result<UserDetailsViewModel> GetProduct(int id)
         {
             throw new NotImplementedException();
         }
 
-        public BaseResult<ViewModelPage<UserListViewModel>> GetProductListPage(UserSearchConditionsViewModel conditions, int pageIndex, int pageSize = 20)
+        public Result<ViewModelPage<UserListViewModel>> GetProductListPage(UserSearchConditionsViewModel conditions, int pageIndex, int pageSize = 20)
         {
             throw new NotImplementedException();
         }
 
-        public BaseSimpleResult UpdateProduct(UpdateUserViewModel newProductViewModel)
+        public SimpleResult UpdateProduct(UpdateUserViewModel newProductViewModel)
         {
             throw new NotImplementedException();
         }
