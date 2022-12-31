@@ -1,4 +1,5 @@
-﻿using MyBoilerplateDotNetCore6.Business.BusinessActionResult;
+﻿using Microsoft.EntityFrameworkCore.Storage;
+using MyBoilerplateDotNetCore6.Business.BusinessActionResult;
 using MyBoilerplateDotNetCore6.ViewModel.BusinessActionResult;
 using MyBoilerplateDotNetCore6.ViewModel.Product;
 
@@ -19,7 +20,15 @@ namespace MyBoilerplateDotNetCore6.Business.Product
 
         public Result<ProductDetailsViewModel> GetProduct(int id)
         {
-            throw new NotImplementedException();
+            var result = new Result<ProductDetailsViewModel>();
+            result.ViewModel = new ProductDetailsViewModel()
+            {
+                Id = 1,
+                Name = "Ice lolly"
+            };
+            result.SetToSucceeded();
+
+            return result;
         }
 
         public Result<ViewModelPage<ProductListViewModel>> GetProductListPage(ProductSearchConditionsViewModel conditions, int pageIndex, int pageSize = 20)

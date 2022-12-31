@@ -10,4 +10,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\MyBoilerplateDotNetCore6.Business\MyBoilerplateDotNetCore6.Business.csproj" />
+    <ProjectReference Include="..\..\Business\MyBoilerplateDotNetCore6.ViewModel\MyBoilerplateDotNetCore6.ViewModel.csproj" />
+  </ItemGroup>
+
 </Project>
