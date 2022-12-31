@@ -23,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBoilerplateDotNetCore6.En
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBoilerplateDotNetCore6.Data.Repository", "Data\MyBoilerplateDotNetCore6.Data.Repository\MyBoilerplateDotNetCore6.Data.Repository.csproj", "{44B3AC51-F88F-4F4E-BF0D-3622BF79385B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBoilerplateDotNetCore6.Business", "Business\MyBoilerplateDotNetCore6.Business\MyBoilerplateDotNetCore6.Business.csproj", "{4BEF98EF-5079-4AB7-82EA-C24D28E7CF2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBoilerplateDotNetCore6.Business", "Business\MyBoilerplateDotNetCore6.Business\MyBoilerplateDotNetCore6.Business.csproj", "{4BEF98EF-5079-4AB7-82EA-C24D28E7CF2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBoilerplateDotNetCore6.ViewModel", "Business\MyBoilerplateDotNetCore6.ViewModel\MyBoilerplateDotNetCore6.ViewModel.csproj", "{8A13A5AD-035C-44EF-A788-FFFC6E637F9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBoilerplateDotNetCore6.ViewModel", "Business\MyBoilerplateDotNetCore6.ViewModel\MyBoilerplateDotNetCore6.ViewModel.csproj", "{8A13A5AD-035C-44EF-A788-FFFC6E637F9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBoilerplateDotNetCore6.WebApi", "API\MyBoilerplateDotNetCore6.WebApi\MyBoilerplateDotNetCore6.WebApi.csproj", "{D3A4B0F0-FCEA-4E4B-BEA3-E4D16E5F3DAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{8A13A5AD-035C-44EF-A788-FFFC6E637F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A13A5AD-035C-44EF-A788-FFFC6E637F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A13A5AD-035C-44EF-A788-FFFC6E637F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3A4B0F0-FCEA-4E4B-BEA3-E4D16E5F3DAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3A4B0F0-FCEA-4E4B-BEA3-E4D16E5F3DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3A4B0F0-FCEA-4E4B-BEA3-E4D16E5F3DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3A4B0F0-FCEA-4E4B-BEA3-E4D16E5F3DAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 		{44B3AC51-F88F-4F4E-BF0D-3622BF79385B} = {4F2E5D1B-613C-4267-A855-F49AC7D5CCC0}
 		{4BEF98EF-5079-4AB7-82EA-C24D28E7CF2D} = {A2AE1650-55B9-4B2D-A166-43B45D72E597}
 		{8A13A5AD-035C-44EF-A788-FFFC6E637F9A} = {A2AE1650-55B9-4B2D-A166-43B45D72E597}
+		{D3A4B0F0-FCEA-4E4B-BEA3-E4D16E5F3DAF} = {D6B6CDF4-E170-4A94-88F4-8B217698CA17}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D609BE75-279F-4A3F-AD3F-CC8E6385A29F}
