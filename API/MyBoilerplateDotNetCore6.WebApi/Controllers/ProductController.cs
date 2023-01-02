@@ -26,7 +26,7 @@ namespace MyBoilerplateDotNetCore6.WebApi.Controllers
 
 
                 // To: Do: Validate request parameter(s)
-
+                if (id <= 0) return BadRequest(Messages.GenericMessage_InvalidId);
 
                 var result = productBusiness.GetProduct(id);
                 if (!result.Success) return BadRequest(result.Message);
