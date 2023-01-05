@@ -1,5 +1,5 @@
+using MyBoilerplateDotNetCore6.ViewModel.Application;
 using MyBoilerplateDotNetCore6.WebApi.Helpers;
-using MyBoilerplateDotNetCore6.WebApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,9 +17,6 @@ var config = configuration.Get<AppConfiguration>();
 if (!StartupHelpers.ValidateConfiguration(_logger, config))
     Environment.Exit(1);
 
-if (!StartupHelpers.TryInitDatabase(_logger, config, builder))
-    Environment.Exit(1);
-
 
 
 // Add services to the container.
@@ -28,6 +25,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddSingleton<AppConfiguration>();
 
 var app = builder.Build();
 

@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MyBoilerplateDotNetCore6.Data.SqlServer\MyBoilerplateDotNetCore6.Data.SqlServer.csproj" />
     <ProjectReference Include="..\MyBoilerplateDotNetCore6.Entities\MyBoilerplateDotNetCore6.Entities.csproj" />
   </ItemGroup>
 

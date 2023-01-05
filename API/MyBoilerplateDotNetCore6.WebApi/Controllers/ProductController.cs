@@ -14,7 +14,7 @@ namespace MyBoilerplateDotNetCore6.WebApi.Controllers
         public ProductController(ILogger<ProductController> logger)
         {
             _logger = logger;
-            productBusiness = new ProductBusiness();
+            productBusiness = new ProductBusiness(_logger);
         }
 
         [HttpGet("Get")]

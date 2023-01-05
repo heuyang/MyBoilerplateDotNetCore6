@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using MyBoilerplateDotNetCore6.Data.SqlServer;
 using MyBoilerplateDotNetCore6.Entities;
 using MyBoilerplateDotNetCore6.Entities.RepositoryActionResult;
 using System.Xml.Linq;
@@ -10,11 +11,14 @@ namespace MyBoilerplateDotNetCore6.Data.Repository
         where TEntity : BaseEntity
         where TConditions : BaseEntitySearchConditions
     {
-        protected readonly DbContext _context;
+        private readonly ILogger _logger;
+        protected readonly SqlServerDbContext _context;
 
-        public BaseRepository(DbContext dbContext, ILogger logger)
+        public BaseRepository(SqlServerDbContext dbContext, ILogger logger)
         {
             _context = dbContext;
+
+            _context.Database.EnsureCreated();
         }
 
         public CreateResult<TEntity> Create(TEntity entity)

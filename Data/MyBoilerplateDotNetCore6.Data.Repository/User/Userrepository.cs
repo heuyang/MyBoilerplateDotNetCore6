@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using MyBoilerplateDotNetCore6.Data.SqlServer;
 using MyBoilerplateDotNetCore6.Entities.RepositoryActionResult;
 using MyBoilerplateDotNetCore6.Entities.User;
 
@@ -8,7 +9,7 @@ namespace MyBoilerplateDotNetCore6.Data.Repository.User
     public class UserRepository : BaseRepository<UserEntity, UserEntitySearchConditions>
     {
 
-        public UserRepository(DbContext dbContext, ILogger logger)
+        public UserRepository(SqlServerDbContext dbContext, ILogger logger)
             : base(dbContext, logger)
         {
 

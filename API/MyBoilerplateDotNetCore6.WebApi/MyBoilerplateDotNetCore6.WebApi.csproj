@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.12" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.12" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
@@ -16,8 +15,11 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Business\MyBoilerplateDotNetCore6.Business\MyBoilerplateDotNetCore6.Business.csproj" />
     <ProjectReference Include="..\..\Business\MyBoilerplateDotNetCore6.ViewModel\MyBoilerplateDotNetCore6.ViewModel.csproj" />
-    <ProjectReference Include="..\..\Data\MyBoilerplateDotNetCore6.Data.Sqlite\MyBoilerplateDotNetCore6.Data.Sqlite.csproj" />
     <ProjectReference Include="..\..\Data\MyBoilerplateDotNetCore6.Data.SqlServer\MyBoilerplateDotNetCore6.Data.SqlServer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
