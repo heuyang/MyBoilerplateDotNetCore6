@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Data\MyBoilerplateDotNetCore6.Data.Repository\MyBoilerplateDotNetCore6.Data.Repository.csproj" />
     <ProjectReference Include="..\..\Data\MyBoilerplateDotNetCore6.Entities\MyBoilerplateDotNetCore6.Entities.csproj" />
     <ProjectReference Include="..\MyBoilerplateDotNetCore6.ViewModel\MyBoilerplateDotNetCore6.ViewModel.csproj" />
   </ItemGroup>

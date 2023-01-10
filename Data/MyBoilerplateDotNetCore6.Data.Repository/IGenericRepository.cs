@@ -14,6 +14,7 @@ namespace MyBoilerplateDotNetCore6.Data.Repository
         CreateResult<TEntity> Create(TEntity entity);
         UpdateResult<TEntity> Update(TEntity entity);
         DeleteResult Delete(TEntity entity);
+        DeleteResult DeleteById(int id);
 
 
     }

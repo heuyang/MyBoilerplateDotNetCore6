@@ -55,6 +55,24 @@ namespace MyBoilerplateDotNetCore6.Data.Repository
             return result;
         }
 
+        public DeleteResult DeleteById(int id)
+        {
+            var result = new DeleteResult();
+
+            var entityResult = GetById(id);
+            if (entityResult.Success)
+            {
+                return Delete(entityResult.Entity);
+            }
+            else
+            {
+                result.SetToFailed(entityResult.Message);
+            }
+
+            return result;
+
+        }
+
         public virtual GetAllResult<TEntity> GetAll()
         {
             throw new NotImplementedException("To be implemented or disabled");
@@ -103,5 +121,6 @@ namespace MyBoilerplateDotNetCore6.Data.Repository
 
             return result;
         }
+
     }
 }

@@ -6,7 +6,7 @@ using MyBoilerplateDotNetCore6.Entities.User;
 
 namespace MyBoilerplateDotNetCore6.Data.Repository.User
 {
-    public class UserRepository : BaseRepository<UserEntity, UserEntitySearchConditions>
+    public class UserRepository : BaseRepository<UserEntity, UserEntitySearchConditions>, IUserRepository
     {
 
         public UserRepository(SqlServerDbContext dbContext, ILogger logger)

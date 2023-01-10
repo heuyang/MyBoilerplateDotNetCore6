@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyBoilerplateDotNetCore6.Business.Product;
+using MyBoilerplateDotNetCore6.Data.Repository;
 
 namespace MyBoilerplateDotNetCore6.WebApi.Controllers
 {
@@ -9,12 +10,16 @@ namespace MyBoilerplateDotNetCore6.WebApi.Controllers
     {
 
         private readonly ILogger<ProductController> _logger;
+        private IUnitOfWork _uow;
+
         private IProductBusiness productBusiness;
 
-        public ProductController(ILogger<ProductController> logger)
+        public ProductController(ILogger<ProductController> logger, IUnitOfWork uow)
         {
             _logger = logger;
-            productBusiness = new ProductBusiness(_logger);
+            _uow = uow;
+
+            productBusiness = new ProductBusiness(_logger, _uow);
         }
 
         [HttpGet("Get")]
