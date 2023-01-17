@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using MyBoilerplateDotNetCore6.Data.Repository;
+using MyBoilerplateDotNetCore6.Data.SqlServer;
 using MyBoilerplateDotNetCore6.ViewModel.Application;
 using MyBoilerplateDotNetCore6.WebApi.Helpers;
 
@@ -17,16 +20,18 @@ var config = configuration.Get<AppConfiguration>();
 if (!StartupHelpers.ValidateConfiguration(_logger, config))
     Environment.Exit(1);
 
-
+builder.Services.AddSingleton<AppConfiguration>();
+builder.Services.AddDbContext<SqlServerDbContext>(options =>
+    options.UseSqlServer(config.Database.ConnectionString_MainDb)
+    );
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 // Add services to the container.
-
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddSingleton<AppConfiguration>();
 
 var app = builder.Build();
 

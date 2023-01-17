@@ -13,7 +13,7 @@ namespace MyBoilerplateDotNetCore6.Data.Repository
         public IProductRepository ProductRepository { get; set; }
         public IUserRepository UserRepository { get; set; }
 
-        public UnitOfWork(SqlServerDbContext context, ILogger logger)
+        public UnitOfWork(SqlServerDbContext context, ILogger<UnitOfWork> logger)
         {
             _context = context;
 

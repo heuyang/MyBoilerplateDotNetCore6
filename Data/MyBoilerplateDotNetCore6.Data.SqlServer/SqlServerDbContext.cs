@@ -12,6 +12,7 @@ namespace MyBoilerplateDotNetCore6.Data.SqlServer
 
         public SqlServerDbContext(DbContextOptions<SqlServerDbContext> options) : base(options)
         {
+
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {
