@@ -27,6 +27,8 @@ namespace MyBoilerplateDotNetCore6.Data.Repository
             try
             {
                 _context.Set<TEntity>().Add(entity);
+                entity.TimeCreated = DateTime.Now;
+                entity.TimeUpdated = DateTime.Now;
                 _context.SaveChanges();
             }
             catch (Exception ex)

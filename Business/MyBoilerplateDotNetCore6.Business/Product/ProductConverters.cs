@@ -26,7 +26,7 @@ namespace MyBoilerplateDotNetCore6.Business.Product
             var entity = new ProductEntity()
             {
                 ProductShortName = viewModel.ProductShortName,
-                ProductFullName = viewModel.ProductShortName,
+                ProductFullName = viewModel.ProductFullName,
                 Description = viewModel.Description,
                 StandardUnitPrice = viewModel.StandardUnitPrice,
                 StandardUnitCost = viewModel.StandardUnitCost,

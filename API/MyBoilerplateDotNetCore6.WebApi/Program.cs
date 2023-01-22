@@ -29,6 +29,18 @@ builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 // Add services to the container.
 builder.Services.AddControllers();
 
+// Allow CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "Allow APIs to be called from other origins",
+                policy =>
+                {
+                    policy
+                        .WithOrigins("https://localhost:7282")
+                        .WithMethods("GET", "POST", "PUT", "DELETE");
+                });
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
