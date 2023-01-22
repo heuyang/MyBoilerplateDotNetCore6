@@ -15,12 +15,12 @@ namespace MyBoilerplateDotNetCore6.Business.Helpers
 
             if (entityResult == null)
             {
-                viewModelResult.SetToFailed("Failed to fetch data from database");
+                viewModelResult.SetAsFailed("Failed to fetch data from database");
                 return;
             }
             if (!entityResult.Success)
             {
-                viewModelResult.SetToFailed(entityResult.Message);
+                viewModelResult.SetAsFailed(entityResult.Message);
                 return;
             }
 

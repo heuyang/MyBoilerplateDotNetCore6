@@ -6,19 +6,34 @@ namespace MyBoilerplateDotNetCore6.Business.Product
     public static class ProductConverters
     {
 
-        public static void ConvertFrom(this ProductDetailsViewModel viewModel, ProductEntity entity)
+        public static ProductDetailsViewModel ToProductDetailsViewModel(ProductEntity entity)
         {
-            viewModel = new ProductDetailsViewModel();
+            if (entity == null) return null;
 
-            if (entity != null)
+            var viewModel = new ProductDetailsViewModel()
             {
-                viewModel = new ProductDetailsViewModel()
-                {
-                    Id = entity.Id,
-                    Name = entity.ProductShortName
-                };
-            }
+                Id = entity.Id,
+                Name = entity.ProductShortName
+            };
 
+            return viewModel;
+        }
+
+        public static ProductEntity ToProductEntity(CreateProductViewModel viewModel)
+        {
+            if (viewModel == null) return null;
+
+            var entity = new ProductEntity()
+            {
+                ProductShortName = viewModel.ProductShortName,
+                ProductFullName = viewModel.ProductShortName,
+                Description = viewModel.Description,
+                StandardUnitPrice = viewModel.StandardUnitPrice,
+                StandardUnitCost = viewModel.StandardUnitCost,
+                StandardUnitOfMeasure = viewModel.StandardUnitOfMeasure
+            };
+
+            return entity;
         }
 
     }

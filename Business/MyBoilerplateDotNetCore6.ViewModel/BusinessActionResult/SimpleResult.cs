@@ -5,19 +5,13 @@
         public bool Success { get; private set; } = false;
         public string Message { get; private set; } = string.Empty;
 
-        //public void SetError(string message)
-        //{
-        //    Success = false;
-        //    Message = message;
-        //}
-
-        public void SetToSucceeded()
+        public void SetAsSucceeded()
         {
             Success = true;
             Message = string.Empty;
         }
 
-        public void SetToFailed(string message)
+        public void SetAsFailed(string message)
         {
             Success = false;
             Message = message;
