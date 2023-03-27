@@ -90,9 +90,34 @@ namespace MyBoilerplateDotNetCore6.Business.Product
             throw new NotImplementedException();
         }
 
-        public SimpleResult UpdateProduct(UpdateProductViewModel newProductViewModel)
+        public SimpleResult UpdateProduct(UpdateProductViewModel updateProductViewModel)
         {
-            throw new NotImplementedException();
+            var simpleResult = new SimpleResult();
+
+            if (updateProductViewModel == null)
+            {
+                simpleResult.SetAsFailed("Unable to update entity with null value provided");
+                return simpleResult;
+            }
+
+            var entity = ProductConverters.ToProductEntity(updateProductViewModel);
+            if (entity == null)
+            {
+                simpleResult.SetAsFailed("Unable to convert to entity for creation.");
+                return simpleResult;
+            }
+
+            var entityResult = _uow.ProductRepository.Update(entity);
+            if (!entityResult.Success)
+            {
+                return new ResultViewModelNotUpdated(entityResult.Message);
+            }
+            else if (entityResult.Entity.Id <= 0)
+            {
+                return new ResultViewModelNotUpdated("Failed to add entity to database.");
+            }
+
+            return new ResultViewModelUpdated();
         }
 
     }

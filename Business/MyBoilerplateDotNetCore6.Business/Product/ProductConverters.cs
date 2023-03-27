@@ -1,4 +1,5 @@
 ﻿using MyBoilerplateDotNetCore6.Entities.Product;
+using MyBoilerplateDotNetCore6.ViewModel;
 using MyBoilerplateDotNetCore6.ViewModel.Product;
 
 namespace MyBoilerplateDotNetCore6.Business.Product
@@ -25,6 +26,24 @@ namespace MyBoilerplateDotNetCore6.Business.Product
 
             var entity = new ProductEntity()
             {
+                ProductShortName = viewModel.ProductShortName,
+                ProductFullName = viewModel.ProductFullName,
+                Description = viewModel.Description,
+                StandardUnitPrice = viewModel.StandardUnitPrice,
+                StandardUnitCost = viewModel.StandardUnitCost,
+                StandardUnitOfMeasure = viewModel.StandardUnitOfMeasure
+            };
+
+            return entity;
+        }
+
+        public static ProductEntity ToProductEntity(UpdateProductViewModel viewModel)
+        {
+            if (viewModel == null) return null;
+
+            var entity = new ProductEntity()
+            {
+                Id = viewModel.Id,
                 ProductShortName = viewModel.ProductShortName,
                 ProductFullName = viewModel.ProductFullName,
                 Description = viewModel.Description,

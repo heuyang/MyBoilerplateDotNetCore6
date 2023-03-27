@@ -86,7 +86,28 @@ namespace MyBoilerplateDotNetCore6.WebApi.Controllers
         [HttpPut]
         public async Task<IActionResult> Update(UpdateProductViewModel model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                // To Do: Validate request (JWT or token)
+                // return Unauthorized()
+
+                // To: Do: Validate request parameter(s)
+                if (model == null) return BadRequest(Messages.GenericMessage_NullValueProvided);
+                if (model.Id <= 0) return BadRequest(Messages.GenericMessage_InvalidId);
+
+                var result = productBusiness.UpdateProduct(model);
+                if (!result.Success) return BadRequest(result.Message);
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+#if DEBUG
+                _logger.LogError(ex.StackTrace);
+#endif
+                return BadRequest(Messages.GenericMessage_InternalServerError);
+            }
         }
 
         [HttpDelete]
