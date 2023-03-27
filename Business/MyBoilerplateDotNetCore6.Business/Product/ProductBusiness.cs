@@ -52,18 +52,16 @@ namespace MyBoilerplateDotNetCore6.Business.Product
 
         public SimpleResult DeleteProduct(int id)
         {
-            throw new NotImplementedException();
-            //var result = new SimpleResult();
-            //var repositoryResult = _uow.ProductRepository.DeleteById(id);
+            var viewModelResult = new Result<DeleteProductViewModel>();
 
-            //if (repositoryResult != null)
-            //{
-            //    if (result.Success)
-            //    {
-            //        result.Success
-            //    }
-            //}
-            //result.SetToFailed("Unable to complete delete operation. No details reported");
+            // Delete Entity
+            var entityResult = _uow.ProductRepository.DeleteById(id);
+            if (!entityResult.Success)
+            {
+                return new ResultViewModelNotDeleted<DeleteProductViewModel>(id);
+            }
+
+            return new ResultViewModeleleted();
         }
 
         public Result<ProductDetailsViewModel> GetProduct(int id)

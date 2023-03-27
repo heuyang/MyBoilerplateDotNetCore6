@@ -47,6 +47,7 @@ namespace MyBoilerplateDotNetCore6.Data.Repository
             try
             {
                 _context.Set<TEntity>().Remove(entity);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {

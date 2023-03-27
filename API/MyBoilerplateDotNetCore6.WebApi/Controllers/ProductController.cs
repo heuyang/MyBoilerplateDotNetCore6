@@ -113,7 +113,27 @@ namespace MyBoilerplateDotNetCore6.WebApi.Controllers
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                // To Do: Validate request (JWT or token)
+                // return Unauthorized()
+
+                // To: Do: Validate request parameter(s)
+                if (id <= 0) return BadRequest(Messages.GenericMessage_InvalidId);
+
+                var result = productBusiness.DeleteProduct(id);
+                if (!result.Success) return BadRequest(result.Message);
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+#if DEBUG
+                _logger.LogError(ex.StackTrace);
+#endif
+                return BadRequest(Messages.GenericMessage_InternalServerError);
+            }
         }
 
 
